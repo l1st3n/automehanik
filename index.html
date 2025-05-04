@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосервис "АвтоМеханик"</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Автосервис "АвтоМеханик"</h1>
+            <nav>
+                <ul>
+                    <li><a href="#" data-tab="home">Главная</a></li>
+                    <li><a href="#" data-tab="services">Услуги</a></li>
+                    <li><a href="#" data-tab="gallery">Галерея</a></li>
+                    <li><a herf="#" data-tab="price">Прайс</a></li>
+                    <li><a href="#" data-tab="about">О нас</a></li>
+                    <li><a href="#" data-tab="contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="home" class="tab-content active">
+                <h2>Добро пожаловать в "АвтоМеханик"!</h2>
+                <p>Мы предлагаем полный спектр услуг по ремонту и обслуживанию автомобилей.</p>
+                <img src="static/images/5.jpg" alt="Автосервис" class="main-image">
+            </section>
+
+            <section id="services" class="tab-content">
+                <h2>Наши услуги</h2>
+                <ul>
+                    <li>Диагностика автомобиля</li>
+                    <li>Ремонт двигателя</li>
+                    <li>Ремонт ходовой части</li>
+                    <li>Замена масла и фильтров</li>
+                    <li>Шиномонтаж</li>
+                    <li>Подбор автозачастей</li>
+                </ul>
+            </section>
+
+            <section id="gallery" class="tab-content">
+                <h2>Галерея</h2>
+                <div class="gallery-grid">
+                    <img src="{{ url_for('static', filename='images/placeholder-image.jpg') }}" alt="Фото 1">
+                    <img src="{{ url_for('static', filename='images/placeholder-image.jpg') }}" alt="Фото 2">
+                    <img src="{{ url_for('static', filename='images/placeholder-image.jpg') }}" alt="Фото 3">
+                    <img src="{{ url_for('static', filename='images/placeholder-image.jpg') }}" alt="Фото 4">
+                </div>
+            </section>
+            <section id="price" class="tab-content">
+                <h2>Прайс</h2>
+                <style>
+                    table {
+                        border-collapse: collapse;
+                        width: 100%; /* Занимает всю ширину контейнера */
+                    }
+            
+                    th, td {
+                        border: 1px solid #ddd;
+                        padding: 8px;
+                        text-align: left;
+                    }
+            
+                    th {
+                        background-color: #f2f2f2;
+                    }
+            
+                    tbody tr:nth-child(odd) {
+                        background-color: #f9f9f9; /* Полосатая раскраска */
+                    }
+            
+                    tbody tr:hover {
+                        background-color: #ddd; /* Эффект при наведении */
+                    }
+                </style>
+                <table>
+                    <caption>Цены на услуги</caption>
+                    <thead>
+                        <tr>
+                            <th>Услуга</th>
+                            <th>Цена (руб.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Замена ГРМ</td>
+                            <td>5000 - 12000</td>
+                        </tr>
+                        <tr>
+                            <td>Замена масла в двигателе</td>
+                            <td>800 - 1200</td>
+                        </tr>
+                        <tr>
+                            <td>Замена тормозных колодок (передние)</td>
+                            <td>700 - 1000</td>
+                        </tr>
+                        <tr>
+                            <td>Замена тормозных колодок (задние)</td>
+                            <td>750 - 1100</td>
+                        </tr>
+                        <tr>
+                            <td>Диагностика ходовой части</td>
+                            <td>Бесплатно (При последующем ремонте)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="about" class="tab-content">
+                <h2>О нас</h2>
+                <p>Мы – команда профессионалов с многолетним опытом работы в сфере автосервиса.</p>
+                <p>Наш автосервис оснащен современным оборудованием, что позволяет нам выполнять работы любой сложности.</p>
+                <img src="{{ url_for('static', filename='images/placeholder-image.jpg') }}" alt="Команда" class="team-image">
+            </section>
+
+            <section id="contact" class="tab-content">
+                <h2>Контакты</h2>
+                <p>Свяжитесь с нами для записи на сервис или консультации:</p>
+                <form method="post" action="/submit_contact">  <!-- Добавляем method и action -->
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name">
+
+                    <label for="phone">Номер телефона:</label>
+                    <input type="tel" id="phone" name="phone">  <!-- Изменено на tel -->
+
+                    <label for="message">Сообщение:</label>
+                    <textarea id="message" name="message"></textarea>
+
+                    <button type="submit">Отправить</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Автосервис "АвтоМеханик"</p>
+                <p><h5>+79601343637<h5></p>
+                <p><h5>+79601343607<h5></p>
+                <p><h5>+79601343640 Босс<h5></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('nav a');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const tabId = this.dataset.tab;
+
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+
+                    tabs.forEach(tab => {
+                        tab.classList.remove('active'); // Убираем активный класс у всех ссылок
+                    });
+
+                    document.getElementById(tabId).classList.add('active');
+                    this.classList.add('active'); // Добавляем активный класс только к текущей ссылке
+                });
+            });
+
+            // По умолчанию показываем вкладку "Главная" и делаем ссылку активной
+            document.getElementById('home').classList.add('active');
+            tabs[0].classList.add('active');
+        });
+    </script>
+</body>
+</html>

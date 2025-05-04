@@ -1,0 +1,249 @@
+/* Общие стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px; /* Добавляем немного отступов по бокам */
+}
+
+/* Шапка */
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: 3px solid #e8491d;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden; /* Добавляем overflow */
+}
+
+header li {
+    float: left;
+    display: inline; /* Убираем float */
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header .highlight, header .current a {
+    color: #e8491d;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #ddd;
+    font-weight: bold;
+}
+
+/* Основная навигация */
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+nav a.active { /* Стиль для активной вкладки */
+    background-color: #e8491d;
+    color: white;
+}
+
+/* Главная секция */
+main {
+    padding: 20px 0;
+}
+
+main h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: #e8491d;
+}
+
+main p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Секция "Услуги" */
+#services ul {
+    list-style: none;
+    padding: 0;
+}
+
+#services li {
+    font-size: 1.2em;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#services li:last-child {
+    border-bottom: none;
+}
+
+/* Галерея */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* О нас */
+.team-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Контакты */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+#contact label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#contact input[type="text"],
+#contact input[type="tel"],
+#contact textarea {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+#contact textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+#contact button {
+    padding: 12px 20px;
+    background-color: #e8491d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: #c63d17;
+}
+
+/* Подвал */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px; /* Добавляем отступ сверху */
+}
+
+/* Медиа-запросы для адаптивного дизайна */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    header #branding,
+    header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav li {
+        float: none;
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* Стили для табов (вкладок) */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
