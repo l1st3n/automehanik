@@ -11,6 +11,7 @@
     <header>
         <div class="container">
             <h1>Автосервис "АвтоМеханик"</h1>
+            <p><h5>г. Воронеж, ул. Ипподромная, д. 17 </h5></p>
             <nav>
                 <ul>
                     <li><a href="#" data-tab="home">Главная</a></li>
@@ -47,10 +48,10 @@
             <section id="gallery" class="tab-content">
                 <h2>Галерея</h2>
                 <div class="gallery-grid">
-                    <img src="{{ url_for('static', filename='images/placeholder-image.jpg') }}" alt="Фото 1">
-                    <img src="{{ url_for('static', filename='images/placeholder-image.jpg') }}" alt="Фото 2">
-                    <img src="{{ url_for('static', filename='images/placeholder-image.jpg') }}" alt="Фото 3">
-                    <img src="{{ url_for('static', filename='images/placeholder-image.jpg') }}" alt="Фото 4">
+                    <img src="static/images/9.jfif" class="main-image">
+                    <img src="static/images/6.jfif" alt="Автосервис" class="main-image">
+                    <img src="static/images/7.jfif" alt="Автосервис" class="main-image">
+                    <img src="static/images/8.jfif" alt="Автосервис" class="main-image">
                 </div>
             </section>
             <section id="price" class="tab-content">
@@ -116,7 +117,7 @@
                 <h2>О нас</h2>
                 <p>Мы – команда профессионалов с многолетним опытом работы в сфере автосервиса.</p>
                 <p>Наш автосервис оснащен современным оборудованием, что позволяет нам выполнять работы любой сложности.</p>
-                <img src="{{ url_for('static', filename='images/placeholder-image.jpg') }}" alt="Команда" class="team-image">
+                <p><h3>Автосервис находится по адресу: г. Воронеж, ул. Ипподромная д. 17</h3></p> 
             </section>
 
             <section id="contact" class="tab-content">
@@ -141,9 +142,43 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Автосервис "АвтоМеханик"</p>
-                <p><h5>+79601343637<h5></p>
-                <p><h5>+79601343607<h5></p>
-                <p><h5>+79601343640 Босс<h5></p>
+                <p><h4>+79601343637<h4></p>
+                <p><h4>+79601343607<h4></p>
+                <p><h4>+79601343640 Директор<h4></p>
+                    <a href="https://2gis.ru/voronezh/firm/70000001037206838" class="button">
+                        Смотреть в 2ГИС
+                      </a>
+                      
+                      <style>
+                      .button {
+                        display: inline-block; 
+                        padding: 10px 20px;    
+                        font-size: 16px;       
+                        cursor: pointer;       
+                        text-align: center;     
+                        text-decoration: none;   
+                        outline: none;          
+                        color: #fff;            
+                        background-color: #4CAF50; 
+                        border: none;           
+                        border-radius: 5px;     
+                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+                        margin-left: 0; /* Убираем автоматические отступы по бокам */
+                        float: left;     
+                        position: relative; /* Делаем позиционирование относительным */
+                        left: 10px;         /* Сдвигаем кнопку на 10 пикселей влево (или другое значение) */
+                      }
+                      
+                      .button:hover {
+                        background-color: #3e8e41; 
+                      }
+                      
+                      .button:active {
+                        background-color: #3e8e41; 
+                        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); 
+                        transform: translateY(1px); 
+                      }
+                      </style>
         </div>
     </footer>
 
